@@ -1,0 +1,9 @@
+<h1>Posts#index</h1>
+<p>Find me in app/views/posts/index.html.erb</p>
+<ul>
+    <% @posts.each do |p| %>
+        <li><%= link_to p.id, p %> <%= p.title %> <%= p.body %> <%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <% end %>
+</ul>
+
+<%= link_to 'New Post', new_post_path %>

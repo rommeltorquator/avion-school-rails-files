@@ -1,0 +1,19 @@
+<h1>edit post</h1>
+
+<%= form_with scope: :post, model: @post , local: true do |form| %>
+    <div>
+        <% if @post.errors.any? %>
+            <ul>
+                <% @post.errors.each do |e| %>
+                    <li><%= e.full_message %></li>
+                <% end %>
+            </ul>
+        <% end %>
+    </div>
+    
+    <div>
+        <p><%= form.text_field :title, placeholder: "Title" %></p>
+        <p><%= form.text_area :body, placeholder: "Body" %></p>
+        <p><%= form.submit %></p>
+    </div>
+<% end %>
