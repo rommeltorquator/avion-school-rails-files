@@ -1,19 +1,23 @@
-<h1>create a post</h1>
+<h1 class="text-center my-4">Create a post</h1>
 
-<%= form_with scope: :post, model: @post , local: true do |form| %>
-    <div>
-        <% if @post.errors.any? %>
-            <ul>
-                <% @post.errors.each do |e| %>
-                    <li><%= e.full_message %></li>
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <%= form_with scope: :post, model: @post , local: true do |form| %>
+            <div>
+                <% if @post.errors.any? %>
+                    <ul>
+                        <% @post.errors.each do |e| %>
+                            <li><%= e.full_message %></li>
+                        <% end %>
+                    </ul>
                 <% end %>
-            </ul>
+            </div>
+            
+            <div>
+                <p><%= form.text_field :title, placeholder: "Title" %></p>
+                <p><%= form.text_area :body, placeholder: "Body" %></p>
+                <p><%= form.submit %></p>
+            </div>
         <% end %>
     </div>
-    
-    <div>
-        <p><%= form.text_field :title, placeholder: "Title" %></p>
-        <p><%= form.text_area :body, placeholder: "Body" %></p>
-        <p><%= form.submit %></p>
-    </div>
-<% end %>
+</div>
