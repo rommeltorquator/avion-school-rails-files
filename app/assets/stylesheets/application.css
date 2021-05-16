@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    background-color: #f5f1e5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #3a3f30;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+p {
+    color: #3a3f30;
+}
+
+p,
+a,
+li {    
+    font-family: 'Playfair Display', serif;
+}
+
+.bg-dark {
+    background-color: #4a503d !important;
+}
+
+.navbar-brand {
+    color: #faf2da !important;
+    font-size: 26px;
+}
+
+.nav-link {
+    color: #faf2da !important;
+    font-size: 18px;
+}
+
+.card {
+    border-color: #999e8a !important;
+}

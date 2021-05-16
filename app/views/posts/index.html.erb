@@ -1,9 +1,16 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
-<ul>
+<h1 class="text-center my-5 display-2">Welcome to my Website</h1>
+<h2 class="mb-3">Please feel free to read my posts ~</h2>
+
+<div class="card-columns">
     <% @posts.each do |p| %>
-        <li><%= link_to p.id, p %> <%= p.title %> <%= p.body %> <%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title"><%= link_to p.title, p %></h5>
+                <p class="card-text"><%= p.body %></p>
+                <p class="card-text">Created at: <small class="text-muted"><%= p.created_at %></small></p>
+            </div>
+        </div>
     <% end %>
-</ul>
+</div>
 
 <%= link_to 'New Post', new_post_path %>
