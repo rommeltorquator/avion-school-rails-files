@@ -9,6 +9,6 @@
 
         <p class="text-center"><%= link_to 'Back to Posts', posts_path %> |
         <%= link_to 'Edit', edit_post_path(@post) %> |
-        <%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     </div>
 </div>
