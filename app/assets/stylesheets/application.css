@@ -93,4 +93,5 @@ li {
 
 .btn-primary:hover {
     background-color: #4a503d !important;
+    border-color: #4a503d !important;
 }

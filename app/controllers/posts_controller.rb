@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all.order(id: :desc)
+    @posts = Post.all.order(id: :desc).group_by(&:day)
+    # @posts = Post.order(id: :desc)
   end
 
   def show
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to posts_path
+      redirect_to @post
     else
       render :new
     end
