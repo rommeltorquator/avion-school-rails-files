@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  
   def index
     @posts = Post.all.order(id: :desc).group_by(&:day)
     # @posts = Post.order(id: :desc)
@@ -16,7 +18,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to @post, notice: "Post was successfully created!"
     else
       render :new
     end
@@ -30,13 +32,14 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     @post.update(post_params)
-    redirect_to post_path(@post)
+    redirect_to post_path(@post), notice: "Post was updated successfully!"
   end
 
   def destroy
     @post = Post.find(params[:id])
     
-    redirect_to posts_path if @post.destroy
+    @post.destroy
+    redirect_to root_path, notice: "Post has been successfully deleted!"
   end
 
   private

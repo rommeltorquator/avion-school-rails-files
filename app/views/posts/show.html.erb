@@ -1,14 +1,28 @@
+<% content_for :title do %>
+    <title><%= @post.title %></title>
+<% end %>
+
 <h1 class="text-center my-4"><%= @post.title %></h1>
 <p class="text-center"><small class="text-muted"><em>Last updated:</em> <%= @post.updated_at.strftime("%b %d, %Y") %></small></p>
 
 <div class="row">
     <div class="col-md-6 offset-md-3">
-        <p><%= @post.body %></p>
+        <div class="card w-100">
+            <div class="card-body">
+                <% if @post.body.length < 60 %>
+                    <p class="text-center"><%= @post.body %></p>
+                <% else %>
+                    <p><%= @post.body %></p>
+                <% end %>
 
-        <hr style="width: 250px;" />
+                <hr style="width: 250px;" />
 
-        <p class="text-center"><%= link_to 'Back to Posts', posts_path %> |
-        <%= link_to 'Edit', edit_post_path(@post) %> |
-        <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <p class="text-center">
+                    <%= link_to 'Back to Posts', posts_path %> |
+                    <%= link_to 'Edit', edit_post_path(@post) %> |
+                    <%= link_to 'Delete', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </p>
+            </div>
+        </div> <!-- card -->
     </div>
-</div>
+</div> <!-- row -->

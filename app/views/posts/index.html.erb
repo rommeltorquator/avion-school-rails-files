@@ -1,3 +1,7 @@
+<% content_for :title do %>
+    <title>Welcome to my website</title>
+<% end %>
+
 <h1 class="text-center my-4 display-3 main-h1">Hope is the anchor of the soul</h1>
 <h2 class="text-center mb-3">Please feel free to read my posts ~</h2>
 
@@ -10,7 +14,7 @@
                 <div class="card-body">
                     <h4 class="card-title"><%= link_to post.title, post %></h4>
                     <p class="card-text"><%= post.body %></p>
-                    <p class="card-text"><small class="text-muted"><em>Last updated:</em> <%= post.updated_at.strftime("%l:%M %P") %></small></p>
+                    <p class="card-text"><small class="text-muted"><em>Created at:</em> <%= post.created_at.strftime("%l:%M %P") %></small></p>
                 </div>
             </div>
         <% end %>
