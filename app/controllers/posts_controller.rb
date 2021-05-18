@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order(id: :desc).group_by(&:day)
+    @rommel = "This is from controller"
     # @posts = Post.order(id: :desc)
   end
 
