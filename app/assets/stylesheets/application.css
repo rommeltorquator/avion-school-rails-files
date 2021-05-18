@@ -76,6 +76,10 @@ li {
     text-decoration: underline;
 }
 
+.active {
+    text-decoration: underline !important;
+}
+
 .card {
     border-color: #999e8a !important;
 }
@@ -96,4 +100,14 @@ li {
 .btn-primary:hover {
     background-color: #4a503d !important;
     border-color: #4a503d !important;
+}
+
+.btn-dark {
+    border-color: #343a40 !important;
+}
+
+.alert-success {
+    background-color: #f3f3f3 !important;
+    border-color: #4a503d !important;
+    color: #343a40 !important;
 }

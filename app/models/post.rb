@@ -3,8 +3,9 @@ class Post < ApplicationRecord
                       uniqueness: true
                       
     validates :body, presence: true,
-                     length: { maximum: 500 }
+                     length: { minimum: 15 }
 
+    # for grouping the posts
     def day
         self.created_at.strftime("%B %e, %Y")
     end
